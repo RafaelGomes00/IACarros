@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91cd96cb-9132-48d2-8c28-95d3dab58375" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.IACarro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IACarro/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChangeCheckPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ChangeCheckPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Car.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Car.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarAI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChangeCheckPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RaceCheckPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChangeCheckPoint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RaceCheckPoint.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
     </list>
@@ -15,10 +19,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Car.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Race.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CarRace.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ChangeCheckPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Car.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Race.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/RaceCheckPoint.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1yW3z73llw4kzF3cmUJPozi8EFr" />
@@ -68,7 +80,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632353795932</updated>
-      <workItem from="1632353821988" duration="14942000" />
+      <workItem from="1632353821988" duration="15544000" />
+      <workItem from="1632401057070" duration="2362000" />
+      <workItem from="1632403507932" duration="7459000" />
     </task>
     <servers />
   </component>
@@ -77,6 +91,18 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
