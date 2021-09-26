@@ -24,12 +24,16 @@ public class CarAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        UpdateVelocity();
+        if(IsWrongWay())
+            Turn();
+        else
+            UpdateVelocity();
     }
 
     private Vector3 ChooseDirection(out float distance)
     {
-        Vector3 direction = transform.forward;
+        Vector3 frontDir = transform.forward;
+        Vector3 direction = frontDir;
         if (numOfRaycast % 2 != 0)
             numOfRaycast--;
 
@@ -58,7 +62,7 @@ public class CarAI : MonoBehaviour
                 angle -= angleVariation;
             
             Quaternion rot = Quaternion.AngleAxis(angle, Vector3.up);
-            Vector3 dir = (rot * transform.forward).normalized;
+            Vector3 dir = (rot * frontDir).normalized;
 
             if (Physics.Raycast(transform.position, dir, out hit, breakDistance))
             {
@@ -103,5 +107,22 @@ public class CarAI : MonoBehaviour
             rb.AddForce(steeringForce, ForceMode.Force);
         
         transform.LookAt(transform.position + vel);
+    }
+
+    private bool IsWrongWay()
+    {
+        RaceCheckPoint check = GetComponent<Car>().CheckPoint;
+        if (check == null) return false;
+
+        return Vector3.Dot(transform.forward, (check.transform.position - transform.position).normalized) <= 0;
+    }
+
+    private void Turn()
+    {
+        RaceCheckPoint check = GetComponent<Car>().CheckPoint;
+        float angle = Vector3.Angle(transform.forward, (check.transform.position - transform.position).normalized);
+        
+        rb.AddForce(transform.forward * carSteeringForce * 0.3f);
+        transform.Rotate(Vector3.up, angle * 0.1f);
     }
 }

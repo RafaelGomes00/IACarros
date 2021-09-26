@@ -45,7 +45,7 @@ public class Race : MonoBehaviour
     private void CarWon(Car car)
     {
         finishedPanel.SetActive(true);
-        finhsedCarName.text = "<color=Green>"+car.carName+"</color> Won!";
+        finhsedCarName.text = car.carName+" Won!";
     }
 
     private void Start()
