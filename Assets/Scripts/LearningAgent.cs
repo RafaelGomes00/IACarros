@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents.Sensors;
+using Unity.MLAgents.Actuators;
 
 public class LearningAgent : Unity.MLAgents.Agent
 {
@@ -31,37 +32,37 @@ public class LearningAgent : Unity.MLAgents.Agent
         sensor.AddObservation(transform.position);
     }
 
-    public override void OnActionReceived(float[] vectorAction)
+    public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        if (vectorAction[0] == 0) // 1 - Frente
+        if (actionBuffers.DiscreteActions.Array[0] == 0) // 1 - Frente
         {
             carroInput.Accelerate();
         }
-        else if (vectorAction[0] == 1) // 2 - Tras
+        else if (actionBuffers.DiscreteActions.Array[0] == 1) // 2 - Tras
         {
             carroInput.Deaccelerate();
         }
-        if (vectorAction[1] == 0) // 1 - Esquerda
+        if (actionBuffers.DiscreteActions.Array[1] == 0) // 1 - Esquerda
         {
             carroInput.TurnLeft();
         }
-        else if (vectorAction[1] == 1) // 2 - Direita
+        else if (actionBuffers.DiscreteActions.Array[1] == 1) // 2 - Direita
         {
             carroInput.TurnRight();
         }
     }
 
-    public override void Heuristic(float[] actionsOut)
+    public override void Heuristic(in ActionBuffers actionsOut)
     {
         if (Input.GetKey(KeyCode.UpArrow)) // 1 - Frente
-            actionsOut[0] = 0;
+            actionsOut.DiscreteActions.Array[0] = 0;
         else if (Input.GetKey(KeyCode.DownArrow)) // 2 - Tras
-            actionsOut[0] = 1;
+            actionsOut.DiscreteActions.Array[0] = 1;
 
         if (Input.GetKey(KeyCode.LeftArrow)) // 1 - Esquerda
-            actionsOut[1] = 0;
+            actionsOut.DiscreteActions.Array[1] = 0;
         else if (Input.GetKey(KeyCode.RightArrow)) // 2 - Direita
-            actionsOut[1] = 1;
+            actionsOut.DiscreteActions.Array[1] = 1;
     }
 
     public void End()
